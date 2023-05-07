@@ -1,7 +1,8 @@
 define`
-	<score-display-box>
+	<score-display-box width="100%">
 		<style>
 			svg {
+				display: block;
 				border: solid 1px var(--text-2);
 			}
 			polygon {

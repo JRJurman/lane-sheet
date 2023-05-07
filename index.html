@@ -3,24 +3,27 @@
 	<head>
 		<meta charset="utf-8" />
 		<style>
+			body {
+				max-width: 700px;
+				font-size: 2em;
+				margin: auto;
+			}
 		</style>
 
-		<!-- libraries -->
-		<link rel="stylesheet" href="https://unpkg.com/open-props" />
-		<link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css" />
-
-		<script src="https://unpkg.com/tram-lite@1.3.0"></script>
-		<script src="./components/ball-selector.js"></script>
-		<script src="./components/pin-selector.js"></script>
-		<script src="./components/round-header.js"></script>
-		<script src="./components/round-selector.js"></script>
-		<script src="./components/score-display-box.js"></script>
-		
 		<title>Lane Sheet - Candlepin Bowling Scoring</title>
+
+		<!-- libraries -->
+		<link rel="stylesheet" href="https://unpkg.com/open-props@1.5.8" />
+		<link rel="stylesheet" href="https://unpkg.com/open-props@1.5.8/normalize.min.css" />
+		<script src="https://unpkg.com/tram-lite@2.1.0"></script>
+		
+		<!-- import components -->
+		<script src="./components/index.js"></script>
 	</head>
 	<body>
-		<round-header name="Tina"></round-header>
-		<ball-selector></ball-selector>
-		<pin-selector></pin-selector>
+		<lane-sheet-components></lane-sheet-components>
+
+		<round-view player="Tina"></round-view>
+		<round-selector-view></round-selector-view>
 	</body>
 </html>
