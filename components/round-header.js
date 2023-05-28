@@ -1,4 +1,4 @@
-define `
+define`
 	<round-header>
 		<style>
 			h2 {
@@ -6,6 +6,6 @@ define `
 			}
 		</style>
 		<h2>${'name'}'s Turn</h2>
-		<score-display-box width="20%" modifier="strike" score="5"></score-display-box>
-	</round-header>	
-`
+		<score-display-box width="20%" modifier="" score="0"></score-display-box>
+	</round-header>
+`;

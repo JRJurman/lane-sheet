@@ -1,12 +1,14 @@
 define`
   <pin-selector>
 		<style>
-			section {
+			form {
 				display: block;
 			}
 		</style>
-		<section>
-			Pins: 
+		<form>
+			Pins:
+			<input id="pin-selection-0" type="checkbox" name="pin-selection-0" value="0">
+			<label for="pin-selection-0">0</label>
 			<input id="pin-selection-1" type="checkbox" name="pin-selection-1" value="1">
 			<label for="pin-selection-1">1</label>
 			<input id="pin-selection-2" type="checkbox" name="pin-selection-2" value="2">
@@ -27,11 +29,24 @@ define`
 			<label for="pin-selection-9">9</label>
 			<input id="pin-selection-10" type="checkbox" name="pin-selection-10" value="10">
 			<label for="pin-selection-10">10</label>
-		</section>
+		</form>
+		<script>
+			initializePinSelector(this);
+		</script>
   </pin-selector>
 `;
 
-function selectPin(button) {
-	// when a higher number is selected, select the rest 
-
+function initializePinSelector(pinSelector) {
+	const pinForm = pinSelector.shadowRoot.querySelector('form');
+	pinForm.addEventListener(
+		'change',
+		(e) => {
+			pinSelector.setAttribute('value', e.target.value);
+			// when a higher number is selected, select the previous
+			[...pinForm.querySelectorAll('input')].forEach((input) => {
+				input.checked = parseInt(input.value) <= parseInt(e.target.value);
+			});
+		},
+		true
+	);
 }

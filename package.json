@@ -5,9 +5,12 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-		"start": "npx serve ."
+    "start": "npx serve ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "tram-lite": "^2.3.0"
+  }
 }
