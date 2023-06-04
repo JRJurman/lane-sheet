@@ -4,9 +4,16 @@
 		<meta charset="utf-8" />
 		<style>
 			body {
-				max-width: 700px;
+				padding: 0 0.5em;
 				font-size: 2em;
 				margin: auto;
+				max-width: 750px;
+			}
+
+			main {
+				display: grid;
+				grid-template-columns: 1fr calc(20vh + 1em);
+				grid-template-rows: 1fr;
 			}
 		</style>
 
@@ -16,14 +23,15 @@
 		<link rel="stylesheet" href="https://unpkg.com/open-props@1.5.8" />
 		<link rel="stylesheet" href="https://unpkg.com/open-props@1.5.8/normalize.min.css" />
 		<script src="https://unpkg.com/tram-lite@2.1.0"></script>
-		
+
 		<!-- import components -->
 		<script src="./components/index.js"></script>
 	</head>
 	<body>
 		<lane-sheet-components></lane-sheet-components>
-
-		<round-view player="Tina"></round-view>
-		<round-selector-view></round-selector-view>
+		<main>
+			<round-controls name="Jesse"></round-controls>
+			<round-selector player="Jesse"></round-selector>
+		</main>
 	</body>
 </html>

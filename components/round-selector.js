@@ -7,8 +7,9 @@ define`
 				display: block;
 				cursor: pointer;
 				background: inherit;
+				width: 100%;
 			}
-			
+
 			button:hover {
 				border: 2px solid white;
 			}
@@ -17,15 +18,16 @@ define`
 			<score-display-box ></score-display-box>
 		</button>
 	</score-display-round-selector>
-`
+`;
 
 define`
-	<round-selector totalscore="0">
+	<round-selector>
 		<style>
 			div {
 				display: grid;
-				grid-template-columns: repeat(5, 1fr);
-				grid-template-rows: 1fr 1fr;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: repeat(10, 9vh);
+				width: 18vh;
 			}
 
 			input[type="text"] {
@@ -39,21 +41,17 @@ define`
 				font-size: 1em;
 			}
 
-			h2 {
+			section {
 				display: flex;
 				justify-content: space-between;
-				padding: 0.5em;
-				margin: 0; 
+				padding: 0.2em 0;
+				margin: 0;
 			}
-			
+
 		</style>
-		<h2>
+		<section>
 			<input type="text" size="10" placeholder="New Player" value=${'player'}>
-			<span>
-				<span>${'totalscore'}</span>
-				<button onclick="removePlayer(this)">Remove</button>
-			</span>
-		</h2>
+		</section>
 		<div>
 			<score-display-round-selector player=${'player'} round="1"></score-display-round-selector>
 			<score-display-round-selector player=${'player'} round="2"></score-display-round-selector>
@@ -65,19 +63,24 @@ define`
 			<score-display-round-selector player=${'player'} round="8"></score-display-round-selector>
 			<score-display-round-selector player=${'player'} round="9"></score-display-round-selector>
 			<score-display-round-selector player=${'player'} round="10"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="11"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="12"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="13"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="14"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="15"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="16"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="17"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="18"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="19"></score-display-round-selector>
+			<score-display-round-selector player=${'player'} round="20"></score-display-round-selector>
 		</div>
 	</round-selector>
-`
+`;
 
 function selectRoundForPlayer(scoreDisplay, event) {
 	const roundSelector = scoreDisplay.getRootNode().host;
-	const player = roundSelector.getAttribute('player')
-	const round = roundSelector.getAttribute('round')
+	const player = roundSelector.getAttribute('player');
+	const round = roundSelector.getAttribute('round');
 
-	console.log({player, round});
-}
-
-function removePlayer(button) {
-	const roundSelector = button.getRootNode().host;
-	roundSelector.remove()
+	console.log({ player, round });
 }
